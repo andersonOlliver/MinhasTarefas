@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MinhasTarefas.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,8 @@ namespace MinhasTarefas.View
         {
             InitializeComponent();
 
+            BindingContext = new MasterViewModel();
+
             buttonA.Clicked += async (sender, e) =>
             {
                 await App.NavigateMasterDetail(new A());
@@ -24,6 +27,11 @@ namespace MinhasTarefas.View
             buttonB.Clicked += async (sender, e) =>
             {
                 await App.NavigateMasterDetail(new B());
+            };
+
+            buttonPerfil.Clicked += async (sender, e) =>
+            {
+                await App.NavigateMasterDetail(new PerfilPage());
             };
         }
     }
