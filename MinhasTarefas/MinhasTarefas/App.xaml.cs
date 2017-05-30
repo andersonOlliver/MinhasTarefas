@@ -2,13 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace MinhasTarefas
 {
     public partial class App : Application
     {
+
+        public static MasterDetailPage MasterDetail { get; set; }
+
+        public async static Task NavigateMasterDetail(Page page)
+        {
+            App.MasterDetail.IsPresented = false;
+            await App.MasterDetail.Detail.Navigation.PushAsync(page);
+        }
+
         public App()
         {
             InitializeComponent();

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MinhasTarefas.View.Master"
+             Title="Master"
+             BackgroundColor="Red"
+             Icon="Menu.png">
+
+    <StackLayout Padding="20">
+        <Button x:Name="buttonA" Text="Navegar para a página A"/>
+        <Button x:Name="buttonB" Text="Navegar para a página B"/>
+    </StackLayout>
+    
+</ContentPage>
