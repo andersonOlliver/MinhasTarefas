@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:schedule="clr-namespace:Syncfusion.SfSchedule.XForms;assembly=Syncfusion.SfSchedule.XForms"
+             x:Class="MinhasTarefas.View.CalendarPage"
+             Title="{Binding Title}">
+
+    
+    <schedule:SfSchedule x:Name="schedule" 
+                         ScheduleView="MonthView"
+                         ShowAppointmentsInline="True"
+                         DataSource="{Binding Meetings}"
+                         Locale="pt">
+        <schedule:SfSchedule.AppointmentMapping>
+            <schedule:ScheduleAppointmentMapping
+                ColorMapping="color"
+                EndTimeMapping="To"
+                StartTimeMapping="From"
+                SubjectMapping="EventName" />
+        </schedule:SfSchedule.AppointmentMapping>
+    </schedule:SfSchedule>
+
+
+</ContentPage>

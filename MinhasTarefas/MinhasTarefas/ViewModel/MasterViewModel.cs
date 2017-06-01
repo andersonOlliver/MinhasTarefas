@@ -27,7 +27,7 @@ namespace MinhasTarefas.ViewModel
             MenuItens = new ObservableCollection<MasterPageItem>(new[]
             {
                 new MasterPageItem("Estatísticas", "icon.png"),
-                new MasterPageItem("Calendário", "calendar.png"),
+                new MasterPageItem("Calendário", "calendar.png", typeof(CalendarPage)),
                 new MasterPageItem("Configurações", "settings.png", typeof(SettingPage)),
                 new MasterPageItem("Sobre", "about.png", typeof(AboutPage))
             });

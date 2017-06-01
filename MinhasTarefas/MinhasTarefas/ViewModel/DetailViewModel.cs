@@ -28,6 +28,7 @@ namespace MinhasTarefas.ViewModel
 
         public DetailViewModel(string day)
         {
+            Title = "Minhas Tarefas";
             Days = new ObservableCollection<Day>();
 
             WeekDB _context = new WeekDB();
@@ -40,5 +41,20 @@ namespace MinhasTarefas.ViewModel
             }
         }
 
+        public DetailViewModel(DayOfWeek day)
+        {
+            
+            Title = "Minhas Tarefas";
+            Days = new ObservableCollection<Day>();
+
+            WeekDB _context = new WeekDB();
+
+            var days = _context.Week.Where(a => a.DayOnCalendar.DayOfWeek == day).ToList();
+
+            foreach (var dayAux in days)
+            {
+                Days.Add(dayAux);
+            }
+        }
     }
 }

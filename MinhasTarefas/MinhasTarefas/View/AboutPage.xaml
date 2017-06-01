@@ -4,5 +4,7 @@
              x:Class="MinhasTarefas.View.AboutPage"
              Title="{Binding Title}">
 
-    <Label Text="Tela Sobre" HorizontalOptions="Center" VerticalOptions="Center" />
+    <Label Text="Tela Sobre"
+           HorizontalOptions="Center" 
+           VerticalOptions="Center" />
 </ContentPage>
