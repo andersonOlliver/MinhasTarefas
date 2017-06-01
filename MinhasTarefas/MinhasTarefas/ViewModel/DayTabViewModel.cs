@@ -32,10 +32,10 @@ namespace MinhasTarefas.ViewModel
 
             var days = _context.Week.Where(a => a.Name == day).ToList();
 
-            foreach(var dayAux in days)
-            {
-                Days.Add(dayAux);
-            }
+            //foreach(var dayAux in days)
+            //{
+            //    Days.Add(dayAux);
+            //}
         }
     }
 }

@@ -12,6 +12,36 @@ namespace MinhasTarefas.Model
 
         public string Name { get; set; }
 
-        public DateTime Moment { get; set; }
+        public string Description { get; set; }
+
+        public DateTime From { get; set; }
+
+        public DateTime To { get; set; }
+
+
+        public Job() { }
+
+        public Job(string name, string description)
+        {
+            Name = name;
+            Description = description;
+        }
+
+        public Job(string name, string description, DateTime from, DateTime to)
+        {
+            Name = name;
+            Description = description;
+            From = from;
+            To = To;
+        }
+
+        public Job(int jobId, string name, string description, DateTime from, DateTime to)
+        {
+            JobId = jobId;
+            Name = name;
+            Description = description;
+            From = from;
+            To = To;
+        }
     }
 }

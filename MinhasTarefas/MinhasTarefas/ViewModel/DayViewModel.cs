@@ -1,38 +1,32 @@
-﻿using MinhasTarefas.Database;
-using MinhasTarefas.Model;
-using System;
-using System.Collections.Generic;
+﻿using MinhasTarefas.Model;
+using MinhasTarefas.Model.Util;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MinhasTarefas.ViewModel
 {
     public class DayViewModel : BaseViewModel
     {
 
-        private ObservableCollection<Day> days;
+        private ObservableCollection<JobUtil> eventList;
 
-        public ObservableCollection<Day> Days
+        public ObservableCollection<JobUtil> EventList
         {
-            get { return days; }
+            get { return eventList; }
             set
             {
-                days = value;
-                OnPropertyChanged("Days");
+                eventList = value;
+                OnPropertyChanged("EventList");
             }
         }
 
-        public DayViewModel()
+        public DayViewModel(JobPerDay jobs)
         {
-            Days = new ObservableCollection<Day>();
+            Title = jobs.Day;
+            EventList = new ObservableCollection<JobUtil>();
 
-            WeekDB _context = new WeekDB();
-
-            foreach (var day in _context.Week)
+            foreach (var job in jobs.Jobs) 
             {
-                Days.Add(day);
+                EventList.Add(job);
             }
         }
 

@@ -39,6 +39,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Control\MyListView.cs" />
+    <Compile Include="Database\JobDB.cs" />
     <Compile Include="Database\WeekDB.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -48,6 +49,8 @@
     <Compile Include="Model\MasterPageItem.cs" />
     <Compile Include="Model\Meeting.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Model\Util\JobPerDay.cs" />
+    <Compile Include="Model\Util\JobUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\AboutViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
@@ -79,8 +82,8 @@
     <Compile Include="View\Day\DayTabPage.xaml.cs">
       <DependentUpon>DayTabPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Detail.xaml.cs">
-      <DependentUpon>Detail.xaml</DependentUpon>
+    <Compile Include="View\DetailPage.xaml.cs">
+      <DependentUpon>DetailPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Master.xaml.cs">
       <DependentUpon>Master.xaml</DependentUpon>
@@ -132,7 +135,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="View\Detail.xaml">
+    <EmbeddedResource Include="View\DetailPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

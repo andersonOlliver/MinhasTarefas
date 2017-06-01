@@ -13,9 +13,9 @@ namespace MinhasTarefas.ViewModel
     public class DetailViewModel : BaseViewModel
     {
 
-        private ObservableCollection<Day> days;
+        private ObservableCollection<string> days;
 
-        public ObservableCollection<Day> Days
+        public ObservableCollection<string> Days
         {
             get { return days; }
             set
@@ -29,31 +29,63 @@ namespace MinhasTarefas.ViewModel
         public DetailViewModel(string day)
         {
             Title = "Minhas Tarefas";
-            Days = new ObservableCollection<Day>();
+            Days = new ObservableCollection<string>();
 
             WeekDB _context = new WeekDB();
 
             var days = _context.Week.Where(a => a.Name == day).ToList();
 
-            foreach(var dayAux in days)
-            {
-                Days.Add(dayAux);
-            }
+            //foreach(var dayAux in days)
+            //{
+            //    Days.Add(dayAux);
+            //}
         }
 
         public DetailViewModel(DayOfWeek day)
         {
             
             Title = "Minhas Tarefas";
-            Days = new ObservableCollection<Day>();
+            Days = new ObservableCollection<string>();
 
-            WeekDB _context = new WeekDB();
+            JobDB _context = new JobDB();
 
-            var days = _context.Week.Where(a => a.DayOnCalendar.DayOfWeek == day).ToList();
+            var days = _context.JobsWeek;
 
             foreach (var dayAux in days)
             {
-                Days.Add(dayAux);
+                Days.Add(dayAux.Day);
+            }
+        }
+
+
+
+        private string dayOfWeekToString(DayOfWeek day)
+        {
+            switch (day)
+            {
+                case DayOfWeek.Sunday:
+                    return "Domingo";
+
+                case DayOfWeek.Monday:
+                    return "Segunda";
+
+                case DayOfWeek.Tuesday:
+                    return "Terça";
+
+                case DayOfWeek.Wednesday:
+                    return "Quarta";
+
+                case DayOfWeek.Thursday:
+                    return "Quinta";
+
+                case DayOfWeek.Friday:
+                    return "Sexta";
+
+                case DayOfWeek.Saturday:
+                    return "Sábado";
+
+                default:
+                    return "";
             }
         }
     }

@@ -1,9 +1,5 @@
-﻿using MinhasTarefas.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MinhasTarefas.Model.Util;
+using MinhasTarefas.ViewModel;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -13,11 +9,11 @@ namespace MinhasTarefas.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DayPage : ContentPage
     {
-        public DayPage()
+        public DayPage(JobPerDay jobs)
         {
             InitializeComponent();
 
-            BindingContext = new DayViewModel();
+            BindingContext = new DayViewModel(jobs);
         }
     }
 }

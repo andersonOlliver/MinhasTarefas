@@ -9,50 +9,72 @@ namespace MinhasTarefas.Database
 {
     public class WeekDB
     {
-        public List<Day> Week = new List<Day>()
+
+        public List<DayOfWeek> Days = new List<DayOfWeek>()
         {
-            new Day()
+            DayOfWeek.Monday,
+            DayOfWeek.Sunday,
+            DayOfWeek.Tuesday,
+            DayOfWeek.Wednesday,
+            DayOfWeek.Thursday,
+            DayOfWeek.Friday,
+            DayOfWeek.Saturday
+        };
+
+        public List<Job> Week = new List<Job>()
+        {
+            new Job()
             {
-                DayId = 0,
-                Name = "Domingo",
-                DayOnCalendar = DateTime.Now
+                JobId = 0,
+                Name = "Acordar",
+                To = DateTime.Now.AddHours(-1),
+                From = DateTime.Now.AddHours(1)
             },
-            new Day()
+            new Job()
             {
-                DayId = 1,
+                JobId = 1,
                 Name = "Segunda-feira",
-                DayOnCalendar = DateTime.Now
+                To = DateTime.Now.AddHours(-1),
+                From = DateTime.Now.AddHours(1)
             },
-            new Day()
+            new Job()
             {
-                DayId = 2,
+                JobId = 2,
                 Name = "Terça-feira",
-                DayOnCalendar = DateTime.Now
+                To = DateTime.Now.AddHours(-1),
+                From = DateTime.Now.AddHours(1)
             },
-            new Day()
+            new Job()
             {
-                DayId = 3,
+                JobId = 3,
                 Name = "Quarta-feira",
-                DayOnCalendar = DateTime.Now
+                To = DateTime.Now.AddHours(-1),
+                From = DateTime.Now.AddHours(1)
             },
-            new Day()
+            new Job()
             {
-                DayId = 4,
+                JobId = 4,
                 Name = "Quinta-feira",
-                DayOnCalendar = DateTime.Now
+                To = DateTime.Now.AddHours(-1),
+                From = DateTime.Now.AddHours(1)
             },
-            new Day()
+            new Job()
             {
-                DayId = 5,
+                JobId = 5,
                 Name = "Sexta-feira",
-                DayOnCalendar = DateTime.Now
+                To = DateTime.Now.AddHours(-1),
+                From = DateTime.Now.AddHours(1)
             },
-            new Day()
+            new Job()
             {
-                DayId = 6,
+                JobId = 6,
                 Name = "Sábado",
-                DayOnCalendar = DateTime.Now
+                To = DateTime.Now.AddHours(-1),
+                From = DateTime.Now.AddHours(1)
             },
         };
+
+
+
     }
 }

@@ -17,7 +17,7 @@ namespace MinhasTarefas
             InitializeComponent();
 
             this.Master = new Master();
-            this.Detail = new NavigationPage(new Detail());
+            this.Detail = new NavigationPage(new DetailPage());
             App.MasterDetail = this;
         }
     }
