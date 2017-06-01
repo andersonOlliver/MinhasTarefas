@@ -1,5 +1,4 @@
-﻿using MinhasTarefas.View.Day;
-using MinhasTarefas.ViewModel;
+﻿using MinhasTarefas.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,17 +8,18 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MinhasTarefas.View
+namespace MinhasTarefas.View.Day
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Master : ContentPage
+    public partial class DayTabPage : ContentPage
     {
-        public Master()
+        public DayTabPage(string day)
         {
             InitializeComponent();
 
-            BindingContext = new MasterViewModel();
+            Title = day;
             
+            BindingContext = new DayTabViewModel(day);
         }
     }
 }

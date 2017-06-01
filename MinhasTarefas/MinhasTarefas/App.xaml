@@ -4,7 +4,15 @@
              x:Class="MinhasTarefas.App">
 	<Application.Resources>
 
-		<!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <Color x:Key="labelNome">Snow</Color>
 
-	</Application.Resources>
+            <Font x:Key="labelFonte">Large</Font>
+
+            <Style x:Key="fundo" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="#F5F5F5" />
+            </Style>
+        </ResourceDictionary>
+
+    </Application.Resources>
 </Application>

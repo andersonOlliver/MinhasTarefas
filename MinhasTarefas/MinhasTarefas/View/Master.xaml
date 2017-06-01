@@ -2,32 +2,58 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MinhasTarefas.View.Master"
+             xmlns:control="clr-namespace:MinhasTarefas.Control;assembly:MinhasTarefas"
              Title="{Binding Title}"
              BackgroundColor="Snow"
              Icon="Menu.png">
 
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Color x:Key="labelNome">Snow</Color>
-
-            <Font x:Key="labelFonte">Large</Font>
-        </ResourceDictionary>
-    </ContentPage.Resources>
-
-    <StackLayout>
-        <StackLayout Orientation="Horizontal" Padding="15, 5, 5, 0" BackgroundColor="DodgerBlue">
-            <Image Source="{Binding User.Image}"  WidthRequest="50" Margin="10, 20, 5, 20"/>
+    <StackLayout Orientation="Vertical">
+        <StackLayout Orientation="Horizontal" 
+                     Padding="15, 10, 5, 0" 
+                     BackgroundColor="DodgerBlue">
+            
+            <Image Source="{Binding User.Image}"  
+                   WidthRequest="50" 
+                   Margin="10, 20, 5, 20"/>
 
             <Label Text="{Binding User.Name}"  Margin="5, 30, 20, 20" 
                    Font="{StaticResource labelFonte}" 
                    TextColor="{StaticResource labelNome}" 
                    FontAttributes="Bold"/>
         </StackLayout>
-        <StackLayout Padding="20">
         
-            <Button x:Name="buttonA" Text="Navegar para a página A"/>
-            <Button x:Name="buttonB" Text="Navegar para a página B"/>
-            <Button x:Name="buttonPerfil" Text="Ver Perfil"/>
+        
+        <StackLayout Padding="5">
+
+            <control:MyListView x:Name="navigationDraw" 
+                      ItemsSource="{Binding MenuItens}"
+                      HasUnevenRows="True"
+                      ItemTappedCommand="{Binding ShowCommand}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            
+                            <StackLayout VerticalOptions="FillAndExpand"
+                                         Orientation="Horizontal"
+                                         Padding="5,10,0,10"
+                                         Spacing="20">
+                                
+                                <Image Source="{Binding Icon}"
+                                       WidthRequest="40"
+                                       HeightRequest="40"
+                                       VerticalOptions="Center" />
+
+                                <Label Text="{Binding Title}"
+                                       FontSize="Medium"
+                                       VerticalOptions="Center"
+                                       TextColor="Black"/>
+                                
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </control:MyListView>
+            
         </StackLayout>
     </StackLayout>
 </ContentPage>
