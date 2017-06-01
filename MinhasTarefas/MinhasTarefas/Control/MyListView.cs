@@ -23,7 +23,7 @@ namespace MinhasTarefas.Control
 
         public MyListView(ListViewCachingStrategy strategy) : base(strategy)
         {
-            Initialize();
+            //Initialize();
         }
 
         public MyListView(): this(ListViewCachingStrategy.RecycleElement)
