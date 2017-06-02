@@ -4,8 +4,6 @@ using MinhasTarefas.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -18,6 +16,7 @@ namespace MinhasTarefas.View
         public DetailPage()
         {
             InitializeComponent();
+            Icon = "agenda.png";
             BindingContext = new DetailViewModel(DateTime.Now.DayOfWeek);
             JobDB _context = new JobDB();
 
@@ -35,7 +34,6 @@ namespace MinhasTarefas.View
             foreach (var day in allDays)
             {
                 DayPage aux = new DayPage(day);
-                aux.Icon = "icon.png";
                 Children.Add(aux);
             }
 

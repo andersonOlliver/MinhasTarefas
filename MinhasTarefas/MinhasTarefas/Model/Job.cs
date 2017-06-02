@@ -32,7 +32,7 @@ namespace MinhasTarefas.Model
             Name = name;
             Description = description;
             From = from;
-            To = To;
+            To = to;
         }
 
         public Job(int jobId, string name, string description, DateTime from, DateTime to)
@@ -41,7 +41,7 @@ namespace MinhasTarefas.Model
             Name = name;
             Description = description;
             From = from;
-            To = To;
+            To = to;
         }
     }
 }
