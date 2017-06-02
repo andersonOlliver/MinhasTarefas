@@ -14,6 +14,8 @@ namespace MinhasTarefas.Model
 
         public string Description { get; set; }
 
+        public User User { get; set; }
+
         public DateTime From { get; set; }
 
         public DateTime To { get; set; }
