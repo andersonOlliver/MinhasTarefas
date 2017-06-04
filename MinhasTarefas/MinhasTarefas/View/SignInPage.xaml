@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MinhasTarefas.View.SignInPage"
+             Title="{Binding Title}"
+             Style="{StaticResource backgroundGrey}">
+
+    <StackLayout VerticalOptions="CenterAndExpand" Style="{StaticResource fundo}">
+
+        <Entry Placeholder="Nome de Usuário" Text="{Binding UserName}" />
+
+        <Entry Placeholder="Senha" Text="{Binding Password}"
+               IsPassword="True"/>
+
+        <Button Text="Entrar" />
+    </StackLayout>
+    
+</ContentPage>

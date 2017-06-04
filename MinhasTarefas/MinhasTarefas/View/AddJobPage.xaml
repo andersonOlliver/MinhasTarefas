@@ -1,6 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MinhasTarefas.View.AddJobPage">
-    
+             xmlns:cbox="clr-namespace:Messier16.Forms.Controls;assembly=Messier16.Forms.Controls.Checkbox"
+             x:Class="MinhasTarefas.View.AddJobPage"
+             Title="{Binding Title}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Salvar"  />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <StackLayout Padding="20" VerticalOptions="StartAndExpand">
+            <Entry Placeholder="Título" Text="{Binding Job.Name}"/>
+
+            <Entry Placeholder="Descrição" Text="{Binding Job.Description}"/>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Início" Style="{StaticResource labelTimePicker}"/>
+                <TimePicker Format="HH:mm" Time="{Binding Job.To}" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="Término" Style="{StaticResource labelTimePicker}"/>
+                <TimePicker Format="HH:mm" Time="{Binding Job.From}" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="CenterAndExpand"
+                         VerticalOptions="FillAndExpand"
+                         Margin="0,10">
+                <StackLayout Style="{StaticResource stackHorizontal}">
+                    <Label Text="Dom" Style="{StaticResource labelDay}"/>
+                    <cbox:Checkbox HorizontalOptions="Center"/>
+                </StackLayout>
+
+                <StackLayout Style="{StaticResource stackHorizontal}">
+                    <Label Text="Seg" Style="{StaticResource labelDay}" />
+                    <cbox:Checkbox HorizontalOptions="Center"/>
+                </StackLayout>
+
+                <StackLayout Style="{StaticResource stackHorizontal}">
+                    <Label Text="Ter" Style="{StaticResource labelDay}" />
+                    <cbox:Checkbox HorizontalOptions="Center" />
+                </StackLayout>
+
+                <StackLayout Style="{StaticResource stackHorizontal}">
+                    <Label Text="Qua" Style="{StaticResource labelDay}" />
+                    <cbox:Checkbox HorizontalOptions="Center"  />
+                </StackLayout>
+
+                <StackLayout Style="{StaticResource stackHorizontal}">
+                    <Label Text="Qui" Style="{StaticResource labelDay}" />
+                    <cbox:Checkbox HorizontalOptions="Center" />
+                </StackLayout>
+
+                <StackLayout Style="{StaticResource stackHorizontal}">
+                    <Label Text="Sex" Style="{StaticResource labelDay}" />
+                    <cbox:Checkbox HorizontalOptions="Center"  />
+                </StackLayout>
+
+                <StackLayout Style="{StaticResource stackHorizontal}">
+                    <Label Text="Sab" Style="{StaticResource labelDay}" />
+                    <cbox:Checkbox HorizontalOptions="Center"  />
+                </StackLayout>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

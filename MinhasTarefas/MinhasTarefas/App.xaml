@@ -5,13 +5,35 @@
 	<Application.Resources>
 
         <ResourceDictionary>
+            
             <Color x:Key="labelNome">Snow</Color>
 
             <Font x:Key="labelFonte">Large</Font>
 
+            <Style x:Key="labelTimePicker" TargetType="Label">
+                <Setter Property="Font" Value="Large" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="Margin" Value="7, 10" />
+            </Style>
+
             <Style x:Key="fundo" TargetType="StackLayout">
                 <Setter Property="BackgroundColor" Value="#F5F5F5" />
             </Style>
+
+            <Style x:Key="backgroundGrey" TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="#F5F5F5" />
+            </Style>
+
+            <!-- Add Task -->
+            <Style x:Key="stackHorizontal" TargetType="StackLayout">
+                <Setter Property="Margin" Value="3" />
+            </Style>
+            
+            <Style x:Key="labelDay" TargetType="Label">
+                <Setter Property="Font" Value="Large" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            </Style>
+
         </ResourceDictionary>
 
     </Application.Resources>

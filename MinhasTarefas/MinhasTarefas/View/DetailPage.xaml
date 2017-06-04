@@ -4,5 +4,7 @@
              x:Class="MinhasTarefas.View.DetailPage"
              xmlns:local="clr-namespace:MinhasTarefas.View;assembly=MinhasTarefas"
              Title="{Binding Title}" >
-    
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Text="Nova" Command="{Binding ShowCommand}"/>
+    </TabbedPage.ToolbarItems>
 </TabbedPage>

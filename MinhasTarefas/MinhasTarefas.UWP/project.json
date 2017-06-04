@@ -1,10 +1,12 @@
 ﻿{
   "dependencies": {
+    "Messier16.Forms.Checkbox": "0.2.1-alpha",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
     "Syncfusion.Xamarin.SfCalendar": "15.2.0.40",
-    "Syncfusion.Xamarin.SfChart": "15.2.0.40",
     "Syncfusion.Xamarin.SfSchedule": "15.2.0.40",
-    "Xamarin.Forms": "2.3.4.224"
+    "Xamarin.Forms": "2.3.4.224",
+    "XLabs.Forms": "2.0.5782",
+    "XLabs.Platform": "2.0.5782"
   },
   "frameworks": {
     "uap10.0": {}

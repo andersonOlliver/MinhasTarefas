@@ -11,12 +11,12 @@ using Xamarin.Forms.Xaml;
 namespace MinhasTarefas.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AddJobPage : ContentPage
+    public partial class SignInPage : ContentPage
     {
-        public AddJobPage()
+        public SignInPage()
         {
             InitializeComponent();
-            BindingContext = new AddItemViewModel();
+            BindingContext = new SignInViewModel();
         }
     }
 }

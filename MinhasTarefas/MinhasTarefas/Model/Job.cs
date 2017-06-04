@@ -21,7 +21,10 @@ namespace MinhasTarefas.Model
         public DateTime To { get; set; }
 
 
-        public Job() { }
+        public Job() {
+            From = DateTime.Now;
+            To = DateTime.Now.AddHours(1);
+        }
 
         public Job(string name, string description)
         {

@@ -21,21 +21,23 @@ namespace MinhasTarefas.View
             JobDB _context = new JobDB();
 
             List<JobPerDay> allDays = new List<JobPerDay>();
-            
 
-            foreach (var day in _context.JobsWeek)
+
+            foreach (var day in _context.JobsWeek.Distinct().ToList())
             {
-                allDays.Add(day);
+                //allDays.Add(day);
+
+                Children.Add(new DayPage(day));
             }
 
 
-            allDays = allDays.Distinct().ToList();
+            //allDays = allDays.Distinct().ToList();
 
-            foreach (var day in allDays)
-            {
-                DayPage aux = new DayPage(day);
-                Children.Add(aux);
-            }
+            //foreach (var day in allDays)
+            //{
+            //    DayPage aux = new DayPage(day);
+            //    Children.Add(aux);
+            //}
 
         }
     }

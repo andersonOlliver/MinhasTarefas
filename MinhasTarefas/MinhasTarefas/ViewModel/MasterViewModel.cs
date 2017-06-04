@@ -26,7 +26,8 @@ namespace MinhasTarefas.ViewModel
             User = new User("1", "Olliver", "user.png");
             MenuItens = new ObservableCollection<MasterPageItem>(new[]
             {
-                new MasterPageItem("Estatísticas", "icon.png"),
+                new MasterPageItem("Entrar", "login.png", typeof(SignInPage)),
+                new MasterPageItem("Nova Tarefa", "icon.png", typeof(AddJobPage)),
                 new MasterPageItem("Calendário", "calendar.png", typeof(CalendarPage)),
                 new MasterPageItem("Configurações", "settings.png", typeof(SettingPage)),
                 new MasterPageItem("Sobre", "about.png", typeof(AboutPage))
