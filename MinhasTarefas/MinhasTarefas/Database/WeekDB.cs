@@ -10,7 +10,7 @@ namespace MinhasTarefas.Database
     public class WeekDB
     {
 
-        public List<DayOfWeek> Days = new List<DayOfWeek>()
+        public static List<DayOfWeek> Days = new List<DayOfWeek>()
         {
             DayOfWeek.Monday,
             DayOfWeek.Sunday,
@@ -21,7 +21,7 @@ namespace MinhasTarefas.Database
             DayOfWeek.Saturday
         };
 
-        public List<Job> Week = new List<Job>()
+        public static List<Job> Week = new List<Job>()
         {
             new Job()
             {

@@ -30,9 +30,7 @@ namespace MinhasTarefas.ViewModel
             Title = "Minhas Tarefas";
             Days = new ObservableCollection<string>();
 
-            WeekDB _context = new WeekDB();
-
-            var days = _context.Week.Where(a => a.Name == day).ToList();
+            var days = WeekDB.Week.Where(a => a.Name == day).ToList();
             
         }
 

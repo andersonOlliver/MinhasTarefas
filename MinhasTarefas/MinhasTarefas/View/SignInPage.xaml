@@ -13,6 +13,9 @@
                IsPassword="True"/>
 
         <Button Text="Entrar" />
+
+        <Button Text="Entrar com Facebook" Command="{Binding LoginSocialCommand}"
+                BackgroundColor="Blue" FontSize="Medium" TextColor="White"/>
     </StackLayout>
     
 </ContentPage>

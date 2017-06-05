@@ -8,6 +8,7 @@ namespace MinhasTarefas.Model
 {
     public class Job
     {
+        //[JsonProperty("userId")]
         public int JobId { get; set; }
 
         public string Name { get; set; }

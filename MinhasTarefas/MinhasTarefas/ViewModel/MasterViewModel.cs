@@ -1,11 +1,8 @@
-﻿using MinhasTarefas.Model;
+﻿using MinhasTarefas.Helpers;
+using MinhasTarefas.Model;
 using MinhasTarefas.View;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace MinhasTarefas.ViewModel
@@ -13,7 +10,14 @@ namespace MinhasTarefas.ViewModel
     public class MasterViewModel: BaseViewModel
     {
 
-        public User User { get; set; }
+        private User _user;
+        public User User
+        { get { return _user; }
+            set
+            {
+                SetProperty(ref _user, value);
+            }
+        }
 
         public ObservableCollection<MasterPageItem> MenuItens { get; }
 
@@ -23,15 +27,35 @@ namespace MinhasTarefas.ViewModel
         public MasterViewModel()
         {
             Title = "Menu";
-            User = new User("1", "Olliver", "user.png");
-            MenuItens = new ObservableCollection<MasterPageItem>(new[]
+            User = new User(
+                Settings.UserId, 
+                Settings.UserName, 
+                Settings.UserProfile,
+                Settings.UserCover
+                );
+            if (!Settings.IsLoggedIn)
             {
-                new MasterPageItem("Entrar", "login.png", typeof(SignInPage)),
-                new MasterPageItem("Nova Tarefa", "icon.png", typeof(AddJobPage)),
-                new MasterPageItem("Calendário", "calendar.png", typeof(CalendarPage)),
-                new MasterPageItem("Configurações", "settings.png", typeof(SettingPage)),
-                new MasterPageItem("Sobre", "about.png", typeof(AboutPage))
-            });
+                MenuItens = new ObservableCollection<MasterPageItem>(new[]
+                {
+                    new MasterPageItem("Entrar", "login.png", typeof(SignInPage)),
+                    new MasterPageItem("Nova Tarefa", "plus.png", typeof(AddJobPage)),
+                    new MasterPageItem("Calendário", "calendar.png", typeof(CalendarPage)),
+                    new MasterPageItem("Configurações", "settings.png", typeof(SettingPage)),
+                    new MasterPageItem("Sobre", "about.png", typeof(AboutPage))
+                });
+            }
+            else
+            {
+                MenuItens = new ObservableCollection<MasterPageItem>(new[]
+               {
+                    new MasterPageItem("Nova Tarefa", "plus.png", typeof(AddJobPage)),
+                    new MasterPageItem("Calendário", "calendar.png", typeof(CalendarPage)),
+                    new MasterPageItem("Configurações", "settings.png", typeof(SettingPage)),
+                    new MasterPageItem("Sobre", "about.png", typeof(AboutPage)),
+                    new MasterPageItem("Sair", "logout.png", typeof(SignInPage))
+                });
+            }
+            
 
             ShowCommand = new Command<MasterPageItem>(ExecuteShowCommand);
         }

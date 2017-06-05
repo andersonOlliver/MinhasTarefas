@@ -28,7 +28,6 @@ namespace MinhasTarefas.Model.Util
         {
             Interval = From.Hour.ToString() + ":" + From.Minute.ToString()
                 + " - " + To.Hour.ToString() + ":" + To.Minute.ToString();
-            Debug.WriteLine("Interval = " + Interval);
         }
     }
 }

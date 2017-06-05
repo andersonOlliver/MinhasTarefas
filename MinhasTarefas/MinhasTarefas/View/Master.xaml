@@ -9,15 +9,18 @@
 
     <StackLayout Orientation="Vertical">
         <StackLayout Orientation="Horizontal" 
-                     Padding="15, 10, 5, 0" 
+                     Padding="15, 20, 5, 0" 
                      BackgroundColor="DodgerBlue">
             
-            <Image Source="{Binding User.Image}"  
+            <Image Source="{Binding User.Profile}"  
                    WidthRequest="50" 
+                   HeightRequest="50"
                    Margin="10, 20, 5, 20"/>
 
-            <Label Text="{Binding User.Name}"  Margin="5, 30, 20, 20" 
+            <Label Text="{Binding User.Name}"  
+                   Margin="5, 30, 10, 20" 
                    Font="{StaticResource labelFonte}" 
+                   FontSize="Large"
                    TextColor="{StaticResource labelNome}" 
                    FontAttributes="Bold"/>
         </StackLayout>
