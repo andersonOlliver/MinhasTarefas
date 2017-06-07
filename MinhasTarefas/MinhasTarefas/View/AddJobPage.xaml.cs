@@ -16,7 +16,8 @@ namespace MinhasTarefas.View
         public AddJobPage()
         {
             InitializeComponent();
-            BindingContext = new AddItemViewModel();
+            BindingContext = new AddJobViewModel();
         }
     }
 }
+    

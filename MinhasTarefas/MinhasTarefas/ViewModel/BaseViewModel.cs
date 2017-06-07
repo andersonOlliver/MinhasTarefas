@@ -10,10 +10,18 @@ namespace MinhasTarefas.ViewModel
     public class BaseViewModel : INotifyPropertyChanged
     {
         public string Title { get; set; }
+        protected INavigation navigation;
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName]string propertyName = null) { 
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public BaseViewModel(){}
+        public BaseViewModel(string title)
+        {
+            Title = title;
+            navigation = App.MasterDetail.Detail.Navigation;
         }
 
         protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName]string propertyName = null)

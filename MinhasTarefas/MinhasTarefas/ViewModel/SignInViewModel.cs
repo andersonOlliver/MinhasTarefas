@@ -21,19 +21,16 @@ namespace MinhasTarefas.ViewModel
         public User User { get; set; }
 
         private readonly AzureService _azureService;
-        INavigation navigation;
+        
 
         ICommand loginCommand;
         public ICommand LoginSocialCommand =>
             loginCommand ?? (loginCommand = new Command(async () => await ExecuteLoginSocialCommandAsync()));
 
 
-        public SignInViewModel()
+        public SignInViewModel():base("Entrar")
         {
-            Title = "Entrar";
-
             _azureService = DependencyService.Get<AzureService>();
-            navigation = App.MasterDetail.Detail.Navigation;
         }
 
         async Task ExecuteLoginSocialCommandAsync()

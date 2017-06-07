@@ -1412,6 +1412,8 @@ namespace MinhasTarefas.Droid
 			global::Messier16.Forms.Droid.Controls.Resource.Styleable.ViewStubCompat_android_id = global::MinhasTarefas.Droid.Resource.Styleable.ViewStubCompat_android_id;
 			global::Messier16.Forms.Droid.Controls.Resource.Styleable.ViewStubCompat_android_inflatedId = global::MinhasTarefas.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
 			global::Messier16.Forms.Droid.Controls.Resource.Styleable.ViewStubCompat_android_layout = global::MinhasTarefas.Droid.Resource.Styleable.ViewStubCompat_android_layout;
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::MinhasTarefas.Droid.Resource.String.ApplicationName;
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::MinhasTarefas.Droid.Resource.String.Hello;
 			global::Com.Syncfusion.Schedule.Resource.String.No_Appointments = global::MinhasTarefas.Droid.Resource.String.No_Appointments;
 			global::Com.Syncfusion.Schedule.Resource.String.all_day = global::MinhasTarefas.Droid.Resource.String.all_day;
 			global::Com.Syncfusion.Schedule.Resource.String.library_name = global::MinhasTarefas.Droid.Resource.String.library_name;
@@ -4434,8 +4436,14 @@ namespace MinhasTarefas.Droid
 		public partial class String
 		{
 			
+			// aapt resource value: 0x7f08002b
+			public const int ApplicationName = 2131230763;
+			
 			// aapt resource value: 0x7f08002a
-			public const int N_Appontments = 2131230762;
+			public const int Hello = 2131230762;
+			
+			// aapt resource value: 0x7f08002c
+			public const int N_Appontments = 2131230764;
 			
 			// aapt resource value: 0x7f080027
 			public const int No_Appointments = 2131230759;

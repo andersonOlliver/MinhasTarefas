@@ -25,15 +25,7 @@ namespace MinhasTarefas.ViewModel
             }
         }
 
-        public DetailViewModel(string day)
-        {
-            Title = "Minhas Tarefas";
-            Days = new ObservableCollection<string>();
-
-            var days = WeekDB.Week.Where(a => a.Name == day).ToList();
-            
-        }
-
+        
         public DetailViewModel(DayOfWeek day)
         {
             
@@ -42,37 +34,37 @@ namespace MinhasTarefas.ViewModel
 
             JobDB _context = new JobDB();
 
-            var days = _context.JobsWeek;
+            var days = WeekDB.Days;
 
             foreach (var dayAux in days)
             {
-                Days.Add(dayAux.Day);
+                Days.Add(DayWeekToString(dayAux));
             }
         }
 
-        private string dayOfWeekToString(DayOfWeek day)
+        private string DayWeekToString(DayWeek day)
         {
             switch (day)
             {
-                case DayOfWeek.Sunday:
+                case DayWeek.Dom:
                     return "Domingo";
 
-                case DayOfWeek.Monday:
+                case DayWeek.Seg:
                     return "Segunda";
 
-                case DayOfWeek.Tuesday:
+                case DayWeek.Ter:
                     return "Terça";
 
-                case DayOfWeek.Wednesday:
+                case DayWeek.Qua:
                     return "Quarta";
 
-                case DayOfWeek.Thursday:
+                case DayWeek.Qui:
                     return "Quinta";
 
-                case DayOfWeek.Friday:
+                case DayWeek.Sex:
                     return "Sexta";
 
-                case DayOfWeek.Saturday:
+                case DayWeek.Sab:
                     return "Sábado";
 
                 default:

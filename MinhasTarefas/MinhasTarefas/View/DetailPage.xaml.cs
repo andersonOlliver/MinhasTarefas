@@ -1,4 +1,5 @@
 ﻿using MinhasTarefas.Database;
+using MinhasTarefas.Model;
 using MinhasTarefas.Model.Util;
 using MinhasTarefas.ViewModel;
 using System;
@@ -20,25 +21,12 @@ namespace MinhasTarefas.View
             BindingContext = new DetailViewModel(DateTime.Now.DayOfWeek);
             JobDB _context = new JobDB();
 
-            List<JobPerDay> allDays = new List<JobPerDay>();
+            List<DayWeek> allDays = WeekDB.Days;
 
-
-            foreach (var day in _context.JobsWeek.Distinct().ToList())
+            foreach (var day in allDays)
             {
-                //allDays.Add(day);
-
                 Children.Add(new DayPage(day));
             }
-
-
-            //allDays = allDays.Distinct().ToList();
-
-            //foreach (var day in allDays)
-            //{
-            //    DayPage aux = new DayPage(day);
-            //    Children.Add(aux);
-            //}
-
         }
     }
 }

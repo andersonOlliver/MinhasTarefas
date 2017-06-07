@@ -6,7 +6,7 @@
              Title="{Binding Title}">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Salvar"  />
+        <ToolbarItem Text="Salvar" Command="{Binding SaveCommand}" />
     </ContentPage.ToolbarItems>
 
     <ScrollView>
@@ -31,37 +31,37 @@
                          Margin="0,10">
                 <StackLayout Style="{StaticResource stackHorizontal}">
                     <Label Text="Dom" Style="{StaticResource labelDay}"/>
-                    <cbox:Checkbox HorizontalOptions="Center"/>
+                    <cbox:Checkbox Checked="{Binding Dom}" HorizontalOptions="Center"/>
                 </StackLayout>
 
                 <StackLayout Style="{StaticResource stackHorizontal}">
                     <Label Text="Seg" Style="{StaticResource labelDay}" />
-                    <cbox:Checkbox HorizontalOptions="Center"/>
+                    <cbox:Checkbox Checked="{Binding Seg}" HorizontalOptions="Center"/>
                 </StackLayout>
 
                 <StackLayout Style="{StaticResource stackHorizontal}">
                     <Label Text="Ter" Style="{StaticResource labelDay}" />
-                    <cbox:Checkbox HorizontalOptions="Center" />
+                    <cbox:Checkbox Checked="{Binding Ter}" HorizontalOptions="Center" />
                 </StackLayout>
 
                 <StackLayout Style="{StaticResource stackHorizontal}">
                     <Label Text="Qua" Style="{StaticResource labelDay}" />
-                    <cbox:Checkbox HorizontalOptions="Center"  />
+                    <cbox:Checkbox Checked="{Binding Qua}" HorizontalOptions="Center"  />
                 </StackLayout>
 
                 <StackLayout Style="{StaticResource stackHorizontal}">
                     <Label Text="Qui" Style="{StaticResource labelDay}" />
-                    <cbox:Checkbox HorizontalOptions="Center" />
+                    <cbox:Checkbox Checked="{Binding Qui}" HorizontalOptions="Center" />
                 </StackLayout>
 
                 <StackLayout Style="{StaticResource stackHorizontal}">
                     <Label Text="Sex" Style="{StaticResource labelDay}" />
-                    <cbox:Checkbox HorizontalOptions="Center"  />
+                    <cbox:Checkbox Checked="{Binding Sex}" HorizontalOptions="Center"  />
                 </StackLayout>
 
                 <StackLayout Style="{StaticResource stackHorizontal}">
                     <Label Text="Sab" Style="{StaticResource labelDay}" />
-                    <cbox:Checkbox HorizontalOptions="Center"  />
+                    <cbox:Checkbox Checked="{Binding Sab}" HorizontalOptions="Center"  />
                 </StackLayout>
             </StackLayout>
 

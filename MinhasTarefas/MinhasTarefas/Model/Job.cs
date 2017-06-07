@@ -1,25 +1,53 @@
-﻿using System;
+﻿using EnumSample.Helpers;
+using SQLite.Net.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace MinhasTarefas.Model
 {
+
+    public enum DayWeek
+    {
+        [EnumValueData(Name = "Domingo", KeyValue = "Domingo")]
+        Dom,
+        [EnumValueData(Name = "Segunda", KeyValue = "Segunda")]
+        Seg,
+        [EnumValueData(Name = "Terça", KeyValue = "Terça")]
+        Ter,
+        [EnumValueData(Name = "Quarta", KeyValue = "Quarta")]
+        Qua,
+        [EnumValueData(Name = "Quinta", KeyValue = "Quinta")]
+        Qui,
+        [EnumValueData(Name = "Sexta", KeyValue = "Sexta")]
+        Sex,
+        [EnumValueData(Name = "Sábado", KeyValue = "Sábado")]
+        Sab
+    }
+
+    [Table("job")]
     public class Job
     {
-        //[JsonProperty("userId")]
+
+        [PrimaryKey, AutoIncrement]
         public int JobId { get; set; }
 
         public string Name { get; set; }
 
         public string Description { get; set; }
 
-        public User User { get; set; }
+        //public User User { get; set; }
 
         public DateTime From { get; set; }
 
         public DateTime To { get; set; }
+
+        public DayWeek Day { get; set; }
+
+        //public Color Color { get; set; }
 
 
         public Job() {
